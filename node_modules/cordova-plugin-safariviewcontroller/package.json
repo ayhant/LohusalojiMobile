@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-safariviewcontroller",
+        "scope": null,
+        "escapedName": "cordova-plugin-safariviewcontroller",
+        "name": "cordova-plugin-safariviewcontroller",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/Limxona/Desktop/Lohusaloji"
+    ]
+  ],
+  "_from": "cordova-plugin-safariviewcontroller@latest",
+  "_id": "cordova-plugin-safariviewcontroller@1.5.4",
+  "_inCache": true,
+  "_location": "/cordova-plugin-safariviewcontroller",
+  "_nodeVersion": "8.11.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-safariviewcontroller_1.5.4_1529510304664_0.8341935242405765"
+  },
+  "_npmUser": {
+    "name": "eddyverbruggen",
+    "email": "eddyverbruggen@gmail.com"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-safariviewcontroller",
+    "scope": null,
+    "escapedName": "cordova-plugin-safariviewcontroller",
+    "name": "cordova-plugin-safariviewcontroller",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-safariviewcontroller/-/cordova-plugin-safariviewcontroller-1.5.4.tgz",
+  "_shasum": "58ddb392b0d6ef6c1e69da5d296ec52ee73eb54e",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-safariviewcontroller",
+  "_where": "/Users/Limxona/Desktop/Lohusaloji",
+  "author": {
+    "name": "Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com",
+    "url": "https://github.com/EddyVerbruggen"
+  },
+  "bugs": {
+    "url": "https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-safariviewcontroller",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Forget InAppBrowser for iOS - this is way better for displaying read-only web content in your PhoneGap app.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-xNNbiAnXOCZRhnonNKMjOGD9N7WXxgc6sV1CDOiWzCP69e/LYaLdbYAmi8XESdd15vqoXVXgrHGTCk98CEygvw==",
+    "shasum": "58ddb392b0d6ef6c1e69da5d296ec52ee73eb54e",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-safariviewcontroller/-/cordova-plugin-safariviewcontroller-1.5.4.tgz",
+    "fileCount": 23,
+    "unpackedSize": 96094,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbKnmhCRA9TVsSAnZWagAAJpoP/istS1xOuc5YVJDLDBD+\nVuN4GIBf8VqNCPMyypO1NzY2UA4tfILU4Nrvrat8r3KmM55TOYLgxVGN4Jf8\nly8ubDpxAoojgbiS/ul67+fhdrVNQJ2Dhqkd8eyclDhkYuAKn5/A6gTwakrO\naRglGSVqiPn6G9K7oqfF0KBgEZ5rVK+Wumfkk5r4gfWoNko+SZlnqrcqw2Lk\nITnVrG2Zve4yIkz8PwVk5QJIwDJE0deWKRJCWHgiU1DEjl8YW7iMEeUw0Rwc\nIGNMYN6QVfr3DHPIQZqErBJxRECyAzU3Ci1tOArLLMzU10K+kJB3n47RB6mO\nDYqVs3dr9XpOmZ06KlTows0S8f75P/MU7F1XdfQ9HDeIHYTJzKURHGuzyhOa\ns27vR7gWfYW7JAvIoCZR7ZoRsF8dSD0cByZFovLKcSQcBI2TxV9v54CT3GXf\n3m5J044EvouIblIC9WJUNhQC0OfJrWYwcj/4MVsFds5l7e3TPrY6uVxL7IKB\ne7+zsQ14duB8xkDYEfIeWucorfU/GDVgBpZF+0V50EcWAwg+ZiePUMbAek9J\n9POV3HtziI2LXdGPyxMLIInm099hGVJLGQJDbPhd0QFZEXa1Bg4YV9oojY7q\nW7HksjvOBsYJL/hlD7xMB8Kako70azoFNCSXaMokGI1CR6ZZMRT8Y7KR2lJh\nSj4m\r\n=+XdZ\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "c11002d02c2dad53c36099c675ddce26b085c6c4",
+  "homepage": "https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller#readme",
+  "keywords": [
+    "InAppBrowser",
+    "InAppSafariBrowser",
+    "Safari",
+    "Safari ViewController",
+    "Chrome Custom Tabs",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "eddyverbruggen",
+      "email": "eddyverbruggen@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-safariviewcontroller",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller.git"
+  },
+  "version": "1.5.4"
+}

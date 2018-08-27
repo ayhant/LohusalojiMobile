@@ -20,12 +20,10 @@ npm-debug.log*
 .versions/
 coverage/
 dist/
-node_modules/
 tmp/
 temp/
 plugins/android.json
 plugins/ios.json
-www/
 $RECYCLE.BIN/
 
 .DS_Store
