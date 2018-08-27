@@ -1,0 +1,41 @@
+page-content-list {
+
+    ion-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #d64161;
+        padding: 5px 10px 5px 10px !important;
+
+        span {
+            color: white;
+        }
+
+        ion-icon {
+            font-size: 30px;
+        }
+        
+    }
+
+    ion-card-content {
+        /* display: flex; */
+        padding: 10px !important;
+
+        .short-description {
+            width: 100%;
+            border-bottom: 2px solid #d64161;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+
+        .body-description {
+            width: 100%;
+            padding-top:15px;
+        }
+
+        .description {
+            font-size: 16px;
+        }
+    }
+
+}

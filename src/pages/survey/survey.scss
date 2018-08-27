@@ -1,0 +1,16 @@
+page-survey {
+
+    ion-label {
+        font-size: 14px;
+        white-space: initial;
+    }
+
+    .popover-ios .popover-content {
+        width: 400px !important;
+        background-color: red;
+    }
+
+    ion-item {
+        padding-left: 10px !important;
+    }
+}

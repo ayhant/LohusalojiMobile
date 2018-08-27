@@ -1,0 +1,52 @@
+page-contact {
+    
+    .logo {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    textarea {
+        border-color: rgb(177, 177, 177);
+        width: 100%;
+        height: 180px;
+        margin-top: 10px;
+        padding: 10px;
+        
+    }
+
+    .title-content, .msg-content {
+        width: 100%;
+
+        .msg-title {
+            span{
+                font-size: 16px;
+                font-weight: 500;
+                color: #d64161;
+            }
+        }
+
+        input {
+            border: 1px solid rgb(177, 177, 177);
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    }
+
+    .userMsgBtn{
+        margin-top: 15px;
+        text-align: center;
+        a {
+            padding: 15px;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+page-messages {
+
+    ion-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #d64161;
+        padding: 5px 10px 5px 10px !important;
+
+        span {
+            color: white;
+        }
+
+        ion-icon {
+            font-size: 30px;
+        }
+        
+    }
+
+    ion-card-content {
+        display: flex;
+        padding: 10px !important;
+
+        .description {
+            font-size: 16px;
+            width: 100%;
+
+            .question-content, .answer-content {
+                margin-bottom: 10px;
+                
+                span {
+                    font-weight: 500;
+                    
+                }
+
+                div {
+                    width: 100%;
+                    border-top: 2px solid #d64161;
+                }
+            }
+        }
+    }
+
+}

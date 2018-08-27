@@ -1,0 +1,43 @@
+
+<style type="text/css">
+  ion-item {
+    background-color: transparent !important;
+  }
+
+  ion-card {
+    background-color: transparent !important;
+  }
+
+  ion-card-header {
+    background-color: #F493A8 !important;
+    opacity: 0.5;
+  }
+
+  ion-content {
+    background-image: url('../../assets/imgs/login-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>İçerik Detay</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+      <ion-card-header style="font-weight:bold">
+        <span>{{content?.Title}}</span>
+        <!-- <ion-icon item-start name="heart" style="color:#d64161"></ion-icon> -->
+      </ion-card-header>
+      <ion-card-content>
+        <span class="description"><div [innerHTML]="content?.Body">
+
+          </div></span>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

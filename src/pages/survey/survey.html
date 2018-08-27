@@ -1,0 +1,2776 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>Anket</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--Anket 1-->
+  <ion-list *ngIf="showSurvey.first">
+    <ion-list-header color="secondary">
+      1. ANKET LOHUSA TANILAMA FORMU
+    </ion-list-header>
+    <ion-item>
+      <ion-label>1. Yaşınız</ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q1" placeholder="_____" style="text-align:right !important;" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>2. Kaç yıllık evlisiniz</ion-label>
+      <ion-select [(ngModel)]="survey1.q2" interface="popover">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="13">13</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="15">15</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>3. Eğitim durumunuz</ion-label>
+      <ion-select [(ngModel)]="survey1.q3" interface="popover">
+        <ion-option value="İlkokul">İlkokul</ion-option>
+        <ion-option value="Ortaokul">Ortaokul</ion-option>
+        <ion-option value="Lise">Lise</ion-option>
+        <ion-option value="Üniversite">Üniversite</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>4. Eşinizin eğitim durumu</ion-label>
+      <ion-select [(ngModel)]="survey1.q4" interface="popover">
+        <ion-option value="İlkokul">İlkokul</ion-option>
+        <ion-option value="Ortaokul">Ortaokul</ion-option>
+        <ion-option value="Lise">Lise</ion-option>
+        <ion-option value="Üniversite">Üniversite</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>5. Mesleğiniz</ion-label>
+      <ion-select [(ngModel)]="survey1.q5" interface="popover">
+        <ion-option value="Ev hanımı">Ev hanımı</ion-option>
+        <ion-option value="İşçi">İşçi</ion-option>
+        <ion-option value="Devlet memuru">Devlet memuru</ion-option>
+        <ion-option value="Serbest meslek">Serbest meslek</ion-option>
+        <ion-option value="Diğer">Diğer</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="survey1.q5 == 'Diğer'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q5" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>6- Eşinizin Mesleği</ion-label>
+      <ion-select [(ngModel)]="survey1.q6" interface="popover">
+        <ion-option value="Çalışmıyor">Çalışmıyor</ion-option>
+        <ion-option value="İşçi">İşçi</ion-option>
+        <ion-option value="Devlet memuru">Devlet memuru</ion-option>
+        <ion-option value="Serbest meslek">Serbest meslek</ion-option>
+        <ion-option value="Diğer">Diğer</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="survey1.q6 == 'Diğer'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q6" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>7. Sağlık Güvenceniz</ion-label>
+      <ion-select [(ngModel)]="survey1.q7" interface="popover">
+        <ion-option value="Var">Var</ion-option>
+        <ion-option value="Yok">Yok</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>8. Ekonomik durumunuzu nasıl tanımlarsınız?</ion-label>
+      <ion-select [(ngModel)]="survey1.q8" interface="popover">
+        <ion-option value="Gelirim giderimden az">Gelirim giderimden az</ion-option>
+        <ion-option value="Gelirim giderime denk">Gelirim giderime denk</ion-option>
+        <ion-option value="Gelirim giderimden fazla">Gelirim giderimden fazla</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>9. Yaşadığınız yerleşim yeri neresidir?</ion-label>
+      <ion-select [(ngModel)]="survey1.q9" interface="popover">
+        <ion-option value="İl">İl</ion-option>
+        <ion-option value="İlçe">İlçe</ion-option>
+        <ion-option value="Köy">Köy</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>10. Aile tipiniz nedir?</ion-label>
+      <ion-select [(ngModel)]="survey1.q10" interface="popover">
+        <ion-option value="Çekirdek aile">Çekirdek aile</ion-option>
+        <ion-option value="Geniş aile">Geniş aile</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>11. Kronik bir hastalığınız var mı? </ion-label>
+      <ion-select [(ngModel)]="survey1.q11" interface="popover" (ionChange)="survey1Additional.q11 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q11" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q11 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q11" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>12. Sürekli kullandığınız ilacınız var mı?</ion-label>
+      <ion-select [(ngModel)]="survey1.q12" interface="popover" (ionChange)="survey1Additional.q12 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q12" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q12 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q12" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-list-header color="secondary">
+      İNTENET KULLANIMI İLE İLGİLİ ÖZELLİKLERİ
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>13. İnterneti kaç yıldır kullanılıyorsunuz? </ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q13" placeholder="_____" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>14. Bir günde ortalama internete ne kadar süre geçiriyorsunuz?</ion-label>
+      <ion-select [(ngModel)]="survey1.q14" interface="popover">
+        <ion-option value="Günde yarım saat">Günde yarım saat</ion-option>
+        <ion-option value="Günde 1 saat">Günde 1 saat</ion-option>
+        <ion-option value="Günde 2 saat">Günde 2 saat</ion-option>
+        <ion-option value="Günde 3 saat">Günde 3 saat</ion-option>
+        <ion-option value="Günde 4 saat ve üzeri">Günde 4 saat ve üzeri</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>15. İnterneti ne amaçla kullanıyorsunuz? (Birden fazla cevap verebilirsiniz)</ion-label>
+      <ion-select [(ngModel)]="survey1.q15" multiple="true" cancelText="Vazgeç" okText="Tamam">
+        <ion-option value="İletişim kurmak">İletişim kurmak</ion-option>
+        <ion-option value="Bilgi öğrenmek">Bilgi öğrenmek</ion-option>
+        <ion-option value="Öğrendiğim bilginin güvenirliliği test etmek">Öğrendiğim bilginin güvenirliliği test etmek</ion-option>
+        <ion-option value="Bilimsel çalışmalar ve iş amacıyla">Bilimsel çalışmalar/iş amacıyla</ion-option>
+        <ion-option value="Diğer">Diğer</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>16. İnternette hangi sayfaların bilgisini güvenli buluyorsunuz? (Birden fazla cevap verebilirsiniz)</ion-label>
+      <ion-select [(ngModel)]="survey1.q16" multiple="true" cancelText="Vazgeç" okText="Tamam">
+        <ion-option value="Resmi Kurum sayfaları">Resmi Kurum sayfaları</ion-option>
+        <ion-option value="Uzman sayfaları">Uzman sayfaları</ion-option>
+        <ion-option value="Blog">Blog</ion-option>
+        <ion-option value="Diğer">Diğer</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">
+      OBSTETRİK ÖYKÜSÜNE İLİŞKİN ÖZELLİKLER
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>17. Kaç kez gebe kaldınız?</ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q17" placeholder="_____" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>18. Kaç kez doğum yaptınız?</ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q18" placeholder="_____" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>19. Yaşayan kaç çocuğunuz var? </ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q19" placeholder="_____" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>20. Ölü doğum yaptınız mı? Evet ise sayısı</ion-label>
+      <ion-select [(ngModel)]="survey1.q20" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q20" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q20 == 'Evet'">
+      <ion-input type="number" [(ngModel)]="survey1Additional.q20" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>21. Düşük yaptınız mı? Evet ise sayısı</ion-label>
+      <ion-select [(ngModel)]="survey1.q21" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q21" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q21 == 'Evet'">
+      <ion-input type="number" [(ngModel)]="survey1Additional.q21" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>22. Küretaj oldunuz mu? Evet ise sayısı</ion-label>
+      <ion-select [(ngModel)]="survey1.q22" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q22" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q22 == 'Evet'">
+      <ion-input type="number" [(ngModel)]="survey1Additional.q22" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>23. Gebeliğiniz planlı bir gebelik miydi?</ion-label>
+      <ion-select [(ngModel)]="survey1.q23" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>24. Gebeliğinizi isteme durumunuz</ion-label>
+      <ion-select [(ngModel)]="survey1.q24" interface="popover">
+        <ion-option value="İsteniyor">İsteniyor</ion-option>
+        <ion-option value="Daha sonra olması isteniyor">Daha sonra olması isteniyor</ion-option>
+        <ion-option value="Hiç istenmiyor">Hiç istenmiyor</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>25. Gebelikte doktor kontrollerinize düzenli gittiniz mi?</ion-label>
+      <ion-select [(ngModel)]="survey1.q25" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>26. Gebeliğinizle ilgili olarak hangi kuruma/kurumlara kontrole gittiniz?</ion-label>
+      <ion-select [(ngModel)]="survey1.q26" interface="popover">
+        <ion-option value="Aile hekimliği">Aile hekimliği</ion-option>
+        <ion-option value="Toplum sağlığı merkezi">Toplum sağlığı merkezi</ion-option>
+        <ion-option value="Devlet Hastanesi">Devlet Hastanesi</ion-option>
+        <ion-option value="Araştırma ve Uygulama Hastanesi">Araştırma ve Uygulama Hastanesi</ion-option>
+        <ion-option value="Üniversite Hastanesi">Üniversite Hastanesi</ion-option>
+        <ion-option value="Özel Merkez">Özel Merkez</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>27. Gebeliğiniz süresince bebek bakımı-annelik ve emzirmeyle ilgili eğitim programına katıldınız mı?</ion-label>
+      <ion-select [(ngModel)]="survey1.q27" interface="popover" (ionChange)="survey1Additional.q27 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!--  <ion-input type="textarea" [(ngModel)]="survey1.q27" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q27 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q27" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>28. Bebek bakımı, annelik ve ebeveynlikle ile ilgili bilgilerinizi nereden aldınız?</ion-label>
+      <ion-select [(ngModel)]="survey1.q28" interface="popover">
+        <ion-option value="Aile Büyükleri">Aile Büyükleri</ion-option>
+        <ion-option value="Kitap">Kitap</ion-option>
+        <ion-option value="Televizyon programları">Televizyon programları</ion-option>
+        <ion-option value="İnternet sayfaları">İnternet sayfaları …. (Blog- Doktor Web Sayfası - forum sayfaları- YouTube)</ion-option>
+        <ion-option value="Doktorumdan">Doktorumdan</ion-option>
+        <ion-option value="Hastanenin eğitim programından">Hastanenin eğitim programından</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>29. Son doğum şekliniz nedir?</ion-label>
+      <ion-select [(ngModel)]="survey1.q29" interface="popover">
+        <ion-option value="Vajinal doğum">Vajinal doğum</ion-option>
+        <ion-option value="Sezaryan">Sezaryan</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>30. Doğum şekliniz tatmin edici miydi?</ion-label>
+      <ion-select [(ngModel)]="survey1.q30" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>31.Eşinizin gebelik ve doğum sürecine yeterli katıldığını düşünüyor musunuz?</ion-label>
+      <ion-select [(ngModel)]="survey1.q31" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Kısmen">Kısmen</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">
+      BEBEĞE İLİŞKİN ÖZELLİKLER
+    </ion-list-header>
+    <ion-item>
+      <ion-label>32. Bebeğinizin cinsiyeti nedir?</ion-label>
+      <ion-select [(ngModel)]="survey1.q32" interface="popover">
+        <ion-option value="Kız">Kız</ion-option>
+        <ion-option value="Erkek">Erkek</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>33. Bebeğinizin cinsiyeti tercih ettiğiniz cinsiyet midir?</ion-label>
+      <ion-select [(ngModel)]="survey1.q33" interface="popover">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>34. Bebeğin doğum tarihi</ion-label>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q34" placeholder="_____" text-right></ion-input> -->
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="survey1.q34"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>35. Bebeğin gestasyon yaşı</ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q35" placeholder="_____" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>36. Doğum kilosu(gr)</ion-label>
+      <ion-input type="number" [(ngModel)]="survey1.q36" placeholder="_____" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>37. Doğum sırasında herhangi bir sorun yaşanmış mı?.</ion-label>
+      <ion-select [(ngModel)]="survey1.q37" interface="popover" (ionChange)="survey1Additional.q37 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q37" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q37 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q37" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>38. Doğum sırasında bebeğe herhangi bir müdahalede bulunulmuş mu?</ion-label>
+      <ion-select [(ngModel)]="survey1.q38" interface="popover" (ionChange)="survey1Additional.q38 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q38" placeholder="_____" text-right></ion-input> -->
+    </ion-item>
+    <ion-item *ngIf="survey1.q38 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q38" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>39. Bebeğin beslenme şekli nedir? (Birden fazla cevap verebilirsiniz)</ion-label>
+      <ion-select [(ngModel)]="survey1.q39" multiple="true" cancelText="Vazgeç" okText="Tamam">
+        <ion-option value="Anne sütü (Emzirerek)">Anne sütü (Emzirerek)</ion-option>
+        <ion-option value="Anne sütü (Biberonla)">Anne sütü (Biberonla)</ion-option>
+        <ion-option value="Formül mama (Biberonla)">Formül mama (Biberonla)</ion-option>
+        <ion-option value="Anne sütü ve formül mama">Anne sütü ve formül mama</ion-option>
+        <ion-option value="Diğer">Diğer</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>40. Taburculuğunuzdan sonra evde yapılması gereken kendinize ait özel bir bakım gereksinimi varsa belirtiniz.</ion-label>
+      <ion-select [(ngModel)]="survey1.q40" interface="popover" (ionChange)="survey1Additional.q40 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="survey1.q40 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q40" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>41. Bebeğin taburculuğundan sonra evde yapılması gereken özel bir bakım gereksinimi varsa belirtiniz</ion-label>
+      <!-- <ion-input type="textarea" [(ngModel)]="survey1.q41" placeholder="_____" text-right></ion-input> -->
+      <ion-select [(ngModel)]="survey1.q41" interface="popover" (ionChange)="survey1Additional.q41 = ''">
+        <ion-option value="Evet">Evet</ion-option>
+        <ion-option value="Hayır">Hayır</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="survey1.q41 == 'Evet'">
+      <ion-input type="textarea" [(ngModel)]="survey1Additional.q41" placeholder="Buraya belirtiniz..."></ion-input>
+    </ion-item>
+  </ion-list>
+  <!--Anket 2-->
+  <ion-list *ngIf="showSurvey.second">
+    <ion-list-header color="secondary">
+      2. ANKET DOĞUM SONU YAŞAM KALİTESİ ÖLÇEĞİ
+      <br />(DSYKÖ) / BÖLÜM 1
+    </ion-list-header>
+    <ion-item>
+      Aşağıdaki her bir madde için yaşamınızın o alanla ilgili ne kadar önemli olduğunu en iyi açıklayan cevabı seçiniz.
+      <br />Cevabınızı yansıtan numarayı yuvarlak içine alarak işaretleyiniz. Doğru ya da yanlış cevaplar yoktur.
+      <br />1= Hiç Önemli değil 4= Biraz Önemli
+      <br />2= Orta derecede Önemli değil 5=Orta derecede Önemli
+      <br />3= Biraz Önemli değil 6= Çok Önemli
+      <br />
+      <strong>NE DERECEDE MEMNUNSUNUZ?</strong>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>1. Sağlığınız</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q1" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>2. Ağrı düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q2" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>3. Günlük Aktivitelerinizdeki Enerji Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q3" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>4. Yaşamınızı Kontrol Edebilme Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q4" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>5. Yardım Almadan Kendinize Bakım Verme Yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q5" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>6. Fiziksel Görünüşünüz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q6" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>7. Uyku Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q7" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>8. Memeleriniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q8" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>9. Doğum nedeni ile olan dikişleriniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q9" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>10. Cinsel Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q10" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>11. İç Huzurunuz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q11" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>12. Genel Olarak Mutluluğunuz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q12" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>13.Genel Olarak Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q13" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>14. Yaşamınızdaki Kaygı Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q14" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.A. Eşinizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q15a" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.B. Ailenizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q15b" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.C. Arkadaşınızdan ya da Diğer İnsanlardan Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q15c" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>16. Eşiniz İle İlişkiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q16" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>17. Aile Sorumluluklarını Yerine Getirme yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q17" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>18. Bebeğinizin Sağlığı</ion-label>
+      <ion-select [(ngModel)]="survey2.p1q18" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        19. Çocuklarınızın Bakımında Yardım Alma Durumunuz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q19" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        20. Çocuklar İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q20" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        21. Ev İşleri için Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q21" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        22. Arkadaşlarınız/akrabalarınız İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q22" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        23. Eşiniz İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q23" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        24. Kendiniz İçin ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q24" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        25. Yeni Bebeğinizi Beslenme yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q25" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        26. Eşinizin Sağlığı
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q26" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        27. Yaşamınızdaki Günlük İşleriniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q27" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        28. Yaşadığınız Ev
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q28" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        29. Komşularınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q29" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        30. Ekonomik Bağımsızlığınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q30" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        31. Ekonomik Harcamalarınızı Karşılama Yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q31" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        32. Tıbbi Hizmete Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q32" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        33. İstenildiği Zaman Herhangi Bir Araca Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q33" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.A. Evdeki Yaşam Koşullarınız (Mal Varlığınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q34a" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.B. Evdeki Yaşam Koşullarınız (Mali Durumunuz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q34b" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.C. Evdeki Yaşam Koşullarınız (Çevresel Koşullarınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q34c" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.A. İş/Çalışma (Eşinizin İşi)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q35a" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.B. İş/Çalışma (Kendi İşiniz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p1q35b" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">
+      2. ANKET DOĞUM SONU YAŞAM KALİTESİ ÖLÇEĞİ
+      <br />(DSYKÖ) / BÖLÜM 2
+    </ion-list-header>
+    <ion-item>
+      Aşağıdaki her bir madde için yaşamınızın o alanla ilgili ne kadar önemli olduğunu en iyi açıklayan cevabı seçiniz.
+      <br />Cevabınızı yansıtan numarayı yuvarlak içine alarak işaretleyiniz. Doğru ya da yanlış cevaplar yoktur.
+      <br />1= Hiç Önemli değil 4= Biraz Önemli
+      <br />2= Orta derecede Önemli değil 5=Orta derecede Önemli
+      <br />3= Biraz Önemli değil 6= Çok Önemli
+      <br />
+      <strong>NE DERECEDE ÖNEMLİ?</strong>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>1. Sağlığınız</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q1" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>2. Ağrı düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q2" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>3. Günlük Aktivitelerinizdeki Enerji Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q3" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>4. Yaşamınızı Kontrol Edebilme Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q4" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>5. Yardım Almadan Kendinize Bakım Verme Yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q5" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>6. Fiziksel Görünüşünüz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q6" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>7. Uyku Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q7" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>8. Memeleriniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q8" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>9. Doğum nedeni ile olan dikişleriniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q9" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>10. Cinsel Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q10" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>11. İç Huzurunuz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q11" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>12. Genel Olarak Mutluluğunuz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q12" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>13.Genel Olarak Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q13" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>14. Yaşamınızdaki Kaygı Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q14" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.A. Eşinizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q15a" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.B. Ailenizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q15b" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.C. Arkadaşınızdan ya da Diğer İnsanlardan Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q15c" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>16. Eşiniz İle İlişkiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q16" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>17. Aile Sorumluluklarını Yerine Getirme yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q17" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>18. Bebeğinizin Sağlığı</ion-label>
+      <ion-select [(ngModel)]="survey2.p2q18" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        19. Çocuklarınızın Bakımında Yardım Alma Durumunuz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q19" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        20. Çocuklar İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q20" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        21. Ev İşleri için Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q21" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        22. Arkadaşlarınız/akrabalarınız İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q22" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        23. Eşiniz İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q23" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        24. Kendiniz İçin ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q24" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        25. Yeni Bebeğinizi Beslenme yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q25" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        26. Eşinizin Sağlığı
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q26" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        27. Yaşamınızdaki Günlük İşleriniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q27" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        28. Yaşadığınız Ev
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q28" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        29. Komşularınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q29" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        30. Ekonomik Bağımsızlığınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q30" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        31. Ekonomik Harcamalarınızı Karşılama Yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q31" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        32. Tıbbi Hizmete Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q32" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        33. İstenildiği Zaman Herhangi Bir Araca Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q33" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.A. Evdeki Yaşam Koşullarınız (Mal Varlığınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q34a" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.B. Evdeki Yaşam Koşullarınız (Mali Durumunuz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q34b" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.C. Evdeki Yaşam Koşullarınız (Çevresel Koşullarınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q34c" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.A. İş/Çalışma (Eşinizin İşi)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q35a" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.B. İş/Çalışma (Kendi İşiniz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey2.p2q35b" interface="popover" style="width: 100% !important;">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!--Anket 3-->
+  <ion-list *ngIf="showSurvey.third">
+    <ion-list-header color="secondary">
+      3.ANKET DOĞUM SONU YAŞAM KALİTESİ ÖLÇEĞİ
+      <br />(DSYKÖ) / BÖLÜM 1
+    </ion-list-header>
+    <ion-item>
+      Aşağıdaki her bir madde için yaşamınızın o alanla ilgili ne kadar önemli olduğunu en iyi açıklayan cevabı seçiniz.
+      <br />Cevabınızı yansıtan numarayı yuvarlak içine alarak işaretleyiniz. Doğru ya da yanlış cevaplar yoktur.
+      <br />1= Hiç Önemli değil 4= Biraz Önemli
+      <br />2= Orta derecede Önemli değil 5=Orta derecede Önemli
+      <br />3= Biraz Önemli değil 6= Çok Önemli
+      <br />
+      <strong>NE DERECEDE MEMNUNSUNUZ?</strong>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>1. Sağlığınız</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q1" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>2. Ağrı düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q2" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>3. Günlük Aktivitelerinizdeki Enerji Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q3" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>4. Yaşamınızı Kontrol Edebilme Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q4" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>5. Yardım Almadan Kendinize Bakım Verme Yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q5" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>6. Fiziksel Görünüşünüz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q6" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>7. Uyku Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q7" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>8. Memeleriniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q8" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>9. Doğum nedeni ile olan dikişleriniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q9" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>10. Cinsel Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q10" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>11. İç Huzurunuz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q11" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>12. Genel Olarak Mutluluğunuz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q12" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>13.Genel Olarak Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q13" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>14. Yaşamınızdaki Kaygı Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q14" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.A. Eşinizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q15a" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.B. Ailenizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q15b" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.C. Arkadaşınızdan ya da Diğer İnsanlardan Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q15c" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>16. Eşiniz İle İlişkiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q16" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>17. Aile Sorumluluklarını Yerine Getirme yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q17" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>18. Bebeğinizin Sağlığı</ion-label>
+      <ion-select [(ngModel)]="survey3.p1q18" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        19. Çocuklarınızın Bakımında Yardım Alma Durumunuz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q19" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        20. Çocuklar İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q20" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        21. Ev İşleri için Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q21" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        22. Arkadaşlarınız/akrabalarınız İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q22" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        23. Eşiniz İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q23" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        24. Kendiniz İçin ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q24" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        25. Yeni Bebeğinizi Beslenme yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q25" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        26. Eşinizin Sağlığı
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q26" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        27. Yaşamınızdaki Günlük İşleriniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q27" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        28. Yaşadığınız Ev
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q28" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        29. Komşularınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q29" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        30. Ekonomik Bağımsızlığınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q30" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        31. Ekonomik Harcamalarınızı Karşılama Yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q31" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        32. Tıbbi Hizmete Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q32" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        33. İstenildiği Zaman Herhangi Bir Araca Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q33" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.A. Evdeki Yaşam Koşullarınız (Mal Varlığınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q34a" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.B. Evdeki Yaşam Koşullarınız (Mali Durumunuz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q34b" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.C. Evdeki Yaşam Koşullarınız (Çevresel Koşullarınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q34c" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.A. İş/Çalışma (Eşinizin İşi)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q35a" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.B. İş/Çalışma (Kendi İşiniz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p1q35b" interface="popover">
+        <ion-option value="1">Hiç Memnun Değil</ion-option>
+        <ion-option value="2">Orta Derecede Memnun Değil</ion-option>
+        <ion-option value="3">Biraz Memnun Değil</ion-option>
+        <ion-option value="4">Biraz Memnun</ion-option>
+        <ion-option value="5">Orta Derecede Memnun</ion-option>
+        <ion-option value="6">Çok Memnun</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">
+      3. ANKET DOĞUM SONU YAŞAM KALİTESİ ÖLÇEĞİ
+      <br />(DSYKÖ) / BÖLÜM 2
+    </ion-list-header>
+    <ion-item>
+      Aşağıdaki her bir madde için yaşamınızın o alanla ilgili ne kadar önemli olduğunu en iyi açıklayan cevabı seçiniz.
+      <br />Cevabınızı yansıtan numarayı yuvarlak içine alarak işaretleyiniz. Doğru ya da yanlış cevaplar yoktur.
+      <br />1= Hiç Önemli değil 4= Biraz Önemli
+      <br />2= Orta derecede Önemli değil 5=Orta derecede Önemli
+      <br />3= Biraz Önemli değil 6= Çok Önemli
+      <br />
+      <strong>NE DERECEDE ÖNEMLİ?</strong>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>1. Sağlığınız</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q1" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>2. Ağrı düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q2" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>3. Günlük Aktivitelerinizdeki Enerji Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q3" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>4. Yaşamınızı Kontrol Edebilme Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q4" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>5. Yardım Almadan Kendinize Bakım Verme Yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q5" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>6. Fiziksel Görünüşünüz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q6" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>7. Uyku Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q7" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>8. Memeleriniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q8" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>9. Doğum nedeni ile olan dikişleriniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q9" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>10. Cinsel Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q10" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>11. İç Huzurunuz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q11" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>12. Genel Olarak Mutluluğunuz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q12" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>13.Genel Olarak Yaşamınız</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q13" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>14. Yaşamınızdaki Kaygı Düzeyiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q14" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.A. Eşinizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q15a" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.B. Ailenizden Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q15b" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>15.C. Arkadaşınızdan ya da Diğer İnsanlardan Aldığınız Duygusal Destek</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q15c" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>16. Eşiniz İle İlişkiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q16" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>17. Aile Sorumluluklarını Yerine Getirme yeterliliğiniz</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q17" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>18. Bebeğinizin Sağlığı</ion-label>
+      <ion-select [(ngModel)]="survey3.p2q18" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        19. Çocuklarınızın Bakımında Yardım Alma Durumunuz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q19" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        20. Çocuklar İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q20" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        21. Ev İşleri için Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q21" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        22. Arkadaşlarınız/akrabalarınız İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q22" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        23. Eşiniz İçin Ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q23" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        24. Kendiniz İçin ayırdığınız Zaman
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q24" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        25. Yeni Bebeğinizi Beslenme yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q25" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        26. Eşinizin Sağlığı
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q26" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        27. Yaşamınızdaki Günlük İşleriniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q27" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        28. Yaşadığınız Ev
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q28" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        29. Komşularınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q29" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        30. Ekonomik Bağımsızlığınız
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q30" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        31. Ekonomik Harcamalarınızı Karşılama Yeterliliğiniz
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q31" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        32. Tıbbi Hizmete Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q32" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        33. İstenildiği Zaman Herhangi Bir Araca Ulaşım
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q33" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.A. Evdeki Yaşam Koşullarınız (Mal Varlığınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q34a" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.B. Evdeki Yaşam Koşullarınız (Mali Durumunuz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q34b" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34.C. Evdeki Yaşam Koşullarınız (Çevresel Koşullarınız)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q34c" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.A. İş/Çalışma (Eşinizin İşi)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q35a" interface="popover">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        35.B. İş/Çalışma (Kendi İşiniz)
+      </ion-label>
+      <ion-select [(ngModel)]="survey3.p2q35b" interface="popover" style="width: 100% !important;">
+        <ion-option value="1">Hiç Önemli Değil</ion-option>
+        <ion-option value="2">Orta Derecede Önemli Değil</ion-option>
+        <ion-option value="3">Biraz Önemli Değil</ion-option>
+        <ion-option value="4">Biraz Önemli</ion-option>
+        <ion-option value="5">Orta Derecede Önemli</ion-option>
+        <ion-option value="6">Çok Önemli</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!--Anket 4-->
+  <ion-list *ngIf="showSurvey.fourth">
+    <ion-list-header color="secondary">
+      4. ANKET Mobil Uygulama Degerlendirme Formu
+    </ion-list-header>
+    <ion-list-header color="secondary">ÖĞRETİMSEL UYGUNLUK</ion-list-header>
+    <ion-item>
+      <ion-label floating="">
+        1. İçeriğin kapsamı öğrenmeyi sağlayacak yeterliliktedir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q1" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        2. Materyal değerlendirme bölümü içermektedir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q2" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        3. Materyaldeki metinler ayrı bir bölümde çıktısı alınabilecek şekilde tasarlanmıştır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q3" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        4. 1Vietinlerle, etkileşimli uygulamalar eşit ağırlıkta dağılımı göstermektedir
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q4" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        5. Materyalde eğlenceli, dikkat çekici bilgiler, resimler ya da uyarıcı işaretler eklenmiştir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q5" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        6. Materyal farklı öğrenme biçimleri (görsel, işitsel...) içermektedir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q6" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        7. Materyallerin içeriği öğrenci kitaplarındaki bilgilerle bütünleşmiştir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q7" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        8. Hazırlanan yazılım Web üzerinden dersi anlamaya olanak vermektedir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q8" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        9. Öğretmen dersi bu materyal üzerinden kolayca işleyebilmektedir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q9" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        10. Materyal içerisindeki çoklu ortam özelikleri (grafik, metin, animasyonlar, video vs) konuya uygun olarak kullanılmıştır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q10" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        11. Ekran görünümü ilk bakışta materyalin web tabanlı eğitim için kullanılabileceğini hissettirmektedir
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q11" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        12. Öğretim materyalinin organizasyonel yapısı açık ve sistematiktir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q12" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        13. Öğretim materyalinde sunulan olaylar ve durumlar öğrencilerin bilişsel yeteneklerine uygundur.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q13" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">EĞITIM PROGRAMINA UYGUNLUK</ion-list-header>
+    <ion-item>
+      <ion-label floating>
+        14. Materyal web tabanlı eğitimde kullanılmak için uygundur.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q14" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        15. Materyal aktarılacak konuya uygun olacak şekilde tasarlanmıştır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q15" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        16. Materyal, öğretmenin ders materyali olarak kullanımına uygundur.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q16" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        17. Grafik, ses, animasyon gibi çoklu odam öğeleri yeterli miktarda kullanılmıştır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q17" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">GÖRSEL YETERLİLİK</ion-list-header>
+    <ion-item>
+      <ion-label floating>
+        18. Kullanılan yazılım öğrenmenin amacına ulaşmasını sağlamaktadır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q18" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        19. Bilgiler uygun resimlerle açık şekilde görselleştirilmiştir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q19" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        20. Meteraldeki şekillerde ver resimlerde gerçekçi canlı renkler kullanılmıştır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q20" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        21. Meteryalde eğelneceli şekiller, görseller vs. kullanılmışıtr.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q21" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        22. Animasyon tasarımı öğreneme isteiğini artırmaktadır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q22" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        23. Yazılım ekranları arasında tutarlıklı vardır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q23" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="secondary">PROGRAMLAMA UYGUNLUĞU / TEKNİK YETERLİLİK</ion-list-header>
+    <ion-item>
+      <ion-label floating>
+        24. Ekranda kullanılan renkler uyumludur.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q24" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        25. Videoların/Animasyonların niteliği açık ve iyidir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q25" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        26. Ekranlar arası geçiş kullanıcya bağlıdır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q26" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        27. Meteryalde yardım menüsü bulunmaktadır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q27" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        28. Video iletimi düzgün ve sorunsuz çalışmaktadır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q28" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        29. Meteryal öğrenci kullanımına izin verecek yetkilendirmelere sahiptir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q29" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        30. Arayüz tasarımı memnun edici ve estetiktir.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q30" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        31. Materyalin giriş sayfasında gerekli yönlendirmeler yer almaktadır.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q31" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        32. Animasyon ve simülasyonlar gerçeğe uygundur.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q32" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        33. Materyal içerisindeki etkileşim düzeyi uygundurr.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q33" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        34. Materyal tüm donanımlarla birlikte kullanılmya uygundur.
+      </ion-label>
+      <ion-select [(ngModel)]="survey4.q34" interface="popover">
+        <ion-option value="1">Kesinlikle Katılıyorum</ion-option>
+        <ion-option value="2">Katılıyorum</ion-option>
+        <ion-option value="3">Kararsızım</ion-option>
+        <ion-option value="4">Katılmıyorum</ion-option>
+        <ion-option value="5">Kesinlikle Katılmıyorum</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="saveSurvey();">Gönder</button>
+</ion-content>

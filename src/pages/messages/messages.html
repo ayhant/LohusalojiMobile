@@ -1,0 +1,37 @@
+<!--
+  Generated template for the MessagesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Önceki Mesajlarım</ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content padding>
+  <ion-card *ngFor="let content of msgList">
+    <ion-card-header style="font-weight:bold">
+      <span>{{content?.Title}}</span>
+      <!-- <ion-icon item-start name="heart" style="color:#d64161"></ion-icon> -->
+      <span class="description">{{content?.CreatedDate}}</span>
+    </ion-card-header>
+    <ion-card-content>
+      <span class="description">
+        <div class="question-content">
+            <span>Sorunuz:</span>
+            <div style="font-style: italic;" [innerHTML]="content?.Message"></div>
+        </div>
+
+        <div class="answer-content">
+          <span>Cevap: </span>
+          <div [innerHTML]="content?.MessageReply"></div>
+        </div>
+        
+        
+      </span>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

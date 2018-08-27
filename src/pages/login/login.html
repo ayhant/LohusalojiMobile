@@ -1,0 +1,182 @@
+<ion-content padding>
+  <div class="logo">
+    <img src="../../assets/imgs/LohusalojiLogo.png" alt="Lohusaloji logo">
+  </div>
+  <div *ngIf="showLogin">
+    <ion-row responsive-sm>
+      <ion-col style="text-align:center; color:#ff7b25;">
+        <h1>Üye Girişi</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="color:#d6cbd3; text-align:center">
+        Daha önce şifrenizi aldıysanız bu sayfadan uygulamaya giriş yapabilirsiniz.
+      </ion-col>
+    </ion-row>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label stacked color="primary">Eposta</ion-label>
+        <ion-input [(ngModel)]="login.username" name="username" type="email" #username="ngModel" spellcheck="false" autocapitalize="off"
+                   required email>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Lütfen geçerli bir eposta adresi giriniz!
+      </span>
+      <ion-item>
+        <ion-label stacked color="primary">Şifre</ion-label>
+        <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Şifre girmelisiniz
+      </span>
+    </ion-list>
+    <ion-row responsive-sm>
+      <ion-col>
+        <button ion-button (click)="onLogin(username.valid, password.valid, login)" block>Üye Girişi Yap</button>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <button ion-button (click)="showForm('signup');" block>Yeni Üye</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="showForm('forgotpassword');" block>Şifre Belirle</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="showSignUp">
+    <ion-list no-lines>
+      <ion-row responsive-sm>
+        <ion-col style="text-align:center; color:#ff7b25;">
+          <h1>Yeni Üye</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="color:#d6cbd3; text-align:center">
+          Daha önce şifrenizi almadıysanız ve şifre oluşturmak istiyorsanız bu sayfayı kullanabilirsiniz.
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label stacked color="primary">Eposta</ion-label>
+        <ion-input [(ngModel)]="signup.username" name="username" type="email" #username="ngModel" required email>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Lütfen geçerli bir eposta adresi giriniz!
+      </span>
+      <ion-item>
+        <ion-label stacked color="primary">Şifre</ion-label>
+        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Şifre girmelisiniz
+      </span>
+      <ion-item>
+        <ion-label stacked color="primary">Şifre Tekrar</ion-label>
+        <ion-input [(ngModel)]="signup.passwordAgain" name="passwordAgain" type="password" #passwordAgain="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="signup.password == signup.passwordAgain || submitted == false" color="danger" padding-left>
+        Şifre ve şifre tekrar alanları aynı olmalı
+      </span>
+      <!-- Input checkbox -->
+      <ion-row responsive-sm>
+        <ion-col>
+          <p>
+            <!-- Input Description -->
+            <ion-checkbox [(ngModel)]="signup.membershipAgreement" color="primary" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            <span style="font-size:13px;"><a (click)="showPrompt()" style="font-size:13px !important; text-decoration:underline;"> Lohusaloji tez çalışmasına</a> katılmayı gönüllü olarak kabul ediyorum.</span> 
+            <span ion-text [hidden]="signup.membershipAgreement || submitted == false" color="danger" padding-left>
+              <br /> Sözleşmeyi okuyup onaylamalısınız.
+            </span>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button ion-button (click)="onSignup(username.valid, password.valid, signup)" block>Yeni Üye Kaydı</button>
+        </ion-col>
+      </ion-row>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button ion-button (click)="showForm('login');" block>Üye Girişi</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="showForm('forgotpassword');" block>Şifre Belirle</button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+
+
+  <div *ngIf="showForgotPassword">
+    <ion-list no-lines>
+      <ion-row responsive-sm>
+        <ion-col style="text-align:center; color:#ff7b25;">
+          <h1>Yeni Şifre Belirle</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="color:#d6cbd3; text-align:center">
+          Daha önce şifrenizi belirlediniz fakat hatırlamıyorsanız bu sayfadan tekrar şifrenizi oluşturabilirsiniz.
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label stacked color="primary">Eposta</ion-label>
+        <ion-input [(ngModel)]="forgotpassword.username" name="username" type="email" #username="ngModel" required email>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Lütfen geçerli bir eposta adresi giriniz!
+      </span>
+      <ion-item>
+        <ion-label stacked color="primary">Şifre</ion-label>
+        <ion-input [(ngModel)]="forgotpassword.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Şifre girmelisiniz
+      </span>
+      <ion-item>
+        <ion-label stacked color="primary">Şifre Tekrar</ion-label>
+        <ion-input [(ngModel)]="forgotpassword.passwordAgain" name="passwordAgain" type="password" #passwordAgain="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <span ion-text [hidden]="forgotpassword.password == forgotpassword.passwordAgain || submitted == false" color="danger" padding-left>
+        Şifre ve şifre tekrar alanları aynı olmalı
+      </span>
+
+      <ion-row responsive-sm>
+        <ion-col>
+          <p>
+            <!-- Input Description -->
+            <ion-checkbox [(ngModel)]="forgotpassword.membershipAgreement" color="primary" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            <span style="font-size:13px;"><a (click)="showPrompt()" style="font-size:13px !important; text-decoration:underline;"> Lohusaloji tez çalışmasına</a> katılmayı gönüllü olarak kabul ediyorum.</span> 
+            <span ion-text [hidden]="forgotpassword.membershipAgreement || submitted == false" color="danger" padding-left>
+              <br /> Sözleşmeyi okuyup onaylamalısınız.
+            </span>
+          </p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row responsive-sm>
+        <ion-col>
+          <button ion-button (click)="onForgotPassword(username.valid, password.valid, forgotpassword)" block>Yeni Şifre Belirle</button>
+        </ion-col>
+      </ion-row>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button ion-button (click)="showForm('login');" block>Üye Girişi</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="showForm('forgotpassword');" block>Yeni Üye</button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{parameter.Title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <div *ngIf="categoryContents?.length == 0">
+    <ion-card>
+      <ion-card-header style="font-weight:bold">
+        <span>İçerik Bulunamadı</span>
+      </ion-card-header>
+      <ion-card-content>
+        <span class="description" style="color:gray">Seçtiğiniz kategoriye ait içerik bulunamadı.</span>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+  <ion-card *ngFor="let categoryContent of categoryContents">
+    <ion-card-header style="font-weight:bold">
+      <span>{{categoryContent.Title}}</span>
+      <!-- <ion-icon item-start name="heart" style="color:#d64161"></ion-icon> -->
+    </ion-card-header>
+    <ion-card-content>
+      <div class="short-description">
+        <span class="description">{{categoryContent.Description}}</span>
+      </div>
+
+      <div class="body-description">
+        <div [innerHTML]="categoryContent?.Body">
+
+        </div>
+      </div>
+    </ion-card-content>
+    <ion-toolbar>
+      <ion-buttons end>
+        <button ion-button (click)="sendMessage(categoryContent);">
+          <ion-icon item-start name="mail" style="color:#d64161"></ion-icon>
+          <span style="font-size:10px;">&nbsp;&nbsp;Ebenize Danışın</span>
+        </button>
+        <button ion-button (click)="doFavori(categoryContent)">
+          <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+          <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+          <span style="font-size:10px;">&nbsp;&nbsp;Favorilere Ekle</span>
+        </button>
+        <!--<button ion-button>
+        <ion-icon item-start name="help-circle" style="color:#d64161"></ion-icon>
+        &nbsp;Soru Sor
+      </button>-->
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-card>
+</ion-content>

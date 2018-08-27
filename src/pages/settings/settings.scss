@@ -1,0 +1,15 @@
+page-settings {
+
+    .version {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-weight: 500;
+            color: gray;
+            font-size: 20px;
+        }
+    }
+}

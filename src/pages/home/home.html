@@ -1,0 +1,315 @@
+<style type="text/css">
+  ion-item {
+    background-color: transparent !important;
+  }
+
+  ion-card {
+    background-color: transparent !important;
+  }
+
+  ion-card-header {
+    background-color: #F493A8 !important;
+    opacity: 0.5;
+  }
+
+  ion-content {
+    background-image: url('../../assets/imgs/login-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-item>
+    <ion-header style="text-align:center; color:#6b5b95;">
+      <h1>Haftalara Göre İçerikler</h1>
+    </ion-header>
+  </ion-item> -->
+
+  <ion-segment [(ngModel)]="segment" color="danger" (ionChange)="updateSchedule()">
+    <ion-segment-button value="all">
+      Tüm İçerikler
+    </ion-segment-button>
+    <ion-segment-button value="favorites">
+      Favorilerim
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class=home-all-content *ngIf="segment=='all'">
+
+    <div class="weeks-contents" *ngIf="false">
+      <div class="week-title" (click)="showContentWeek('w1')">
+        <span>1. Hafta</span>
+        <ion-icon item-start name="{{showContent.w1 == true ? 'remove': 'add'}}"></ion-icon>
+      </div>
+
+      <div class="no-content-text" *ngIf="w1Contents.length == 0 && showContent.w1">
+        <span>Bu haftaya ait içerik bulunmamaktadır...</span>
+      </div>
+
+
+      <div *ngIf="showContent.w1">
+        <ion-card *ngFor="let categoryContent of w1Contents">
+          <ion-card-header style="font-weight:bold">
+            <span (click)="goToContentDetail(categoryContent);">
+              {{categoryContent.Title}}
+            </span>
+          </ion-card-header>
+          <ion-card-content (click)="goToContentDetail(categoryContent);">
+            <span class="description">{{categoryContent.Description}}</span>
+          </ion-card-content>
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button (click)="doFavori(categoryContent);">
+                <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+                <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card>
+      </div>
+
+      <div class="week-title" (click)="showContentWeek('w2')">
+        <span>2. Hafta</span>
+        <ion-icon item-start name="{{showContent.w2 == true ? 'remove': 'add'}}"></ion-icon>
+      </div>
+
+      <div class="no-content-text" *ngIf="w2Contents.length == 0 && showContent.w2">
+        <span>Bu haftaya ait içerik bulunmamaktadır...</span>
+      </div>
+
+
+      <div *ngIf="showContent.w2">
+        <ion-card *ngFor="let categoryContent of w2Contents">
+          <ion-card-header style="font-weight:bold">
+            <span (click)="goToContentDetail(categoryContent);">
+              {{categoryContent.Title}}
+            </span>
+          </ion-card-header>
+          <ion-card-content (click)="goToContentDetail(categoryContent);">
+            <span class="description">{{categoryContent.Description}}</span>
+          </ion-card-content>
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button (click)="doFavori(categoryContent);">
+                <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+                <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card>
+      </div>
+
+
+      <div class="week-title" (click)="showContentWeek('w3')">
+        <span>3. Hafta</span>
+        <ion-icon item-start name="{{showContent.w3 == true ? 'remove': 'add'}}"></ion-icon>
+      </div>
+
+      <div class="no-content-text" *ngIf="w3Contents.length == 0 && showContent.w3">
+        <span>Bu haftaya ait içerik bulunmamaktadır...</span>
+      </div>
+
+      <div *ngIf="showContent.w3">
+        <ion-card *ngFor="let categoryContent of w3Contents">
+          <ion-card-header style="font-weight:bold">
+            <span (click)="goToContentDetail(categoryContent);">
+              {{categoryContent.Title}}
+            </span>
+          </ion-card-header>
+          <ion-card-content (click)="goToContentDetail(categoryContent);">
+            <span class="description">{{categoryContent.Description}}</span>
+          </ion-card-content>
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button (click)="doFavori(categoryContent);">
+                <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+                <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card>
+      </div>
+
+
+      <div class="week-title" (click)="showContentWeek('w4')">
+        <span>4. Hafta</span>
+        <ion-icon item-start name="{{showContent.w4 == true ? 'remove': 'add'}}"></ion-icon>
+      </div>
+
+      <div class="no-content-text" *ngIf="w4Contents.length == 0 && showContent.w4">
+        <span>Bu haftaya ait içerik bulunmamaktadır...</span>
+      </div>
+
+      <div *ngIf="showContent.w4">
+        <ion-card *ngFor="let categoryContent of w4Contents">
+          <ion-card-header style="font-weight:bold">
+            <span (click)="goToContentDetail(categoryContent);">
+              {{categoryContent.Title}}
+            </span>
+          </ion-card-header>
+          <ion-card-content (click)="goToContentDetail(categoryContent);">
+            <span class="description">{{categoryContent.Description}}</span>
+          </ion-card-content>
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button (click)="doFavori(categoryContent);">
+                <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+                <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card>
+      </div>
+
+
+      <div class="week-title" (click)="showContentWeek('w5')">
+        <span>5. Hafta</span>
+        <ion-icon item-start name="{{showContent.w5 == true ? 'remove': 'add'}}"></ion-icon>
+      </div>
+
+      <div class="no-content-text" *ngIf="w5Contents.length == 0 && showContent.w5">
+        <span>Bu haftaya ait içerik bulunmamaktadır...</span>
+      </div>
+
+      <div *ngIf="showContent.w5">
+        <ion-card *ngFor="let categoryContent of w5Contents">
+          <ion-card-header style="font-weight:bold">
+            <span (click)="goToContentDetail(categoryContent);">
+              {{categoryContent.Title}}
+            </span>
+          </ion-card-header>
+          <ion-card-content (click)="goToContentDetail(categoryContent);">
+            <span class="description">{{categoryContent.Description}}</span>
+          </ion-card-content>
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button (click)="doFavori(categoryContent);">
+                <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+                <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card>
+      </div>
+
+
+      <div class="week-title" (click)="showContentWeek('w6')">
+        <span>6. Hafta</span>
+        <ion-icon item-start name="{{showContent.w6 == true ? 'remove': 'add'}}"></ion-icon>
+      </div>
+
+      <div class="no-content-text" *ngIf="w6Contents.length == 0 && showContent.w6">
+        <span>Bu haftaya ait içerik bulunmamaktadır...</span>
+      </div>
+
+
+      <div *ngIf="showContent.w6">
+        <ion-card *ngFor="let categoryContent of w6Contents">
+          <ion-card-header style="font-weight:bold">
+            <span (click)="goToContentDetail(categoryContent);">
+              {{categoryContent.Title}}
+            </span>
+          </ion-card-header>
+          <ion-card-content (click)="goToContentDetail(categoryContent);">
+            <span class="description">{{categoryContent.Description}}</span>
+          </ion-card-content>
+          <ion-toolbar>
+            <ion-buttons end>
+              <button ion-button (click)="doFavori(categoryContent);">
+                <ion-icon *ngIf="!categoryContent.IsFavorite" item-start name="ios-heart-outline" style="color:#d64161"></ion-icon>
+                <ion-icon *ngIf="categoryContent.IsFavorite" item-start name="ios-heart" style="color:#d64161"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card>
+      </div>
+    </div>
+
+    <div class="category-content" style="background-color:white">
+
+      <div class=main-category *ngFor="let item of mainCategories">
+        <div (click)="showChildCategories(item);">
+          <img src="../../assets/imgs/mom.png" width="16" height="5" *ngIf="item.CategoryId==24" />
+          <img src="../../assets/imgs/baby.png"  width="16" height="5" *ngIf="item.CategoryId==25" />
+          <img src="../../assets/imgs/dad.png" width="16" height="5"  *ngIf="item.CategoryId==26" />
+        </div>
+
+        <div *ngIf="item.IsOpened">
+          <div *ngFor="let child of item.Childs">
+            <div class="sub-categories" (click)="showChildCategories(child)">
+              <ion-icon *ngIf="!child.IsOpened" item-start name="{{child.HasChild ? 'add': ''}}" style="color:#d64161"></ion-icon>
+              <ion-icon *ngIf="child.IsOpened" item-start name="remove" style="color:#d64161"></ion-icon>
+              <span>{{child.Title}}</span>
+            </div>
+            <div *ngIf="child.IsOpened">
+              <div class="child-categories" *ngFor="let subChild of child.Childs" (click)="showCategoryList(subChild)">
+                <ion-icon item-start name="" style="color:#d64161"></ion-icon>
+                <span>{{subChild.Title}}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <!-- <div class=main-category>
+        <img src="../../assets/imgs/baby.png" />
+      </div>
+
+      <div class=main-category>
+        <img src="../../assets/imgs/dad.png" />
+      </div> -->
+
+    </div>
+
+  </div>
+
+  <div class="home-favorite-content" *ngIf="segment=='favorites'" style="background-color:white">
+    <!-- <div class="hdr">
+      <h1>Favori İçerikler</h1>
+    </div> -->
+
+    <div class="no-content-text" *ngIf="favoritesContents.length == 0">
+      <span>Favori içeriğiniz bulunmamaktadır...</span>
+    </div>
+    <ion-card *ngFor="let categoryContent of favoritesContents" style="background-color:white">
+      <ion-card-header style="font-weight:bold">
+        <span (click)="goToContentDetail(categoryContent);">
+          {{categoryContent.ContentTitle}}
+        </span>
+      </ion-card-header>
+      <ion-card-content (click)="goToContentDetail(categoryContent);">
+        <span class="body">{{categoryContent.ContentTitle}}</span>
+      </ion-card-content>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button (click)="sendMessage(categoryContent);">
+            <ion-icon item-start name="mail" style="color:#d64161"></ion-icon>
+            <span style="font-size:10px;">&nbsp;&nbsp;Ebenize Danışın</span>
+          </button>
+          <button ion-button (click)="doFavori(categoryContent);">
+            <ion-icon item-start name="ios-heart" style="color:#d64161"></ion-icon>
+            <span style="font-size:10px;">&nbsp;&nbsp;Favorilerimden Çıkar</span>
+          </button>
+          <!--<button ion-button>
+                <ion-icon item-start name="help-circle" style="color:#d64161"></ion-icon>
+                &nbsp;Soru Sor
+              </button>-->
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-card>
+  </div>
+</ion-content>

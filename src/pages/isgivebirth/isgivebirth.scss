@@ -1,0 +1,37 @@
+page-isgivebirth {
+
+    .header-text {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+        span {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            color: #d64161;
+            line-height: 25px;
+        }
+        
+
+    }
+
+    .photo {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 340px;
+            height: 340px;
+            margin-bottom: 15px;
+            object-fit: none;
+        }
+
+    }
+    
+
+}
